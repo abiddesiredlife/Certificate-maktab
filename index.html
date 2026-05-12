@@ -1,1 +1,632 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Professional Certificate Generator 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#edf1f7;
+    font-family:'Montserrat',sans-serif;
+    padding:30px;
+    color:#222;
+}
+
+.container{
+    max-width:1500px;
+    margin:auto;
+}
+
+/* ========================== FORM PANEL ========================== */
+
+.top-panel{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    margin-bottom:30px;
+}
+
+.top-panel h2{
+    font-size:30px;
+    color:#102542;
+    margin-bottom:25px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:#1d3557;
+}
+
+.form-group input,
+.form-group textarea{
+    padding:13px;
+    border:1px solid #ccd3df;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.btns{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+button{
+    border:none;
+    padding:14px 26px;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.preview-btn{
+    background:#14213d;
+    color:white;
+}
+
+.download-btn{
+    background:#0a9396;
+    color:white;
+}
+
+.print-btn{
+    background:#b8860b;
+    color:white;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+/* ========================== CERTIFICATE ========================== */
+
+#certificate{
+    width:1400px;
+    height:990px;
+    background:white;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    border:18px solid #14213d;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* inner border */
+
+.inner-border{
+    position:absolute;
+    top:22px;
+    left:22px;
+    right:22px;
+    bottom:22px;
+    border:3px solid #d4a017;
+}
+
+/* decorative corners */
+
+.corner{
+    position:absolute;
+    width:100px;
+    height:100px;
+    border:4px solid #d4a017;
+}
+
+.corner.tl{
+    top:18px;
+    left:18px;
+    border-right:none;
+    border-bottom:none;
+}
+
+.corner.tr{
+    top:18px;
+    right:18px;
+    border-left:none;
+    border-bottom:none;
+}
+
+.corner.bl{
+    bottom:18px;
+    left:18px;
+    border-right:none;
+    border-top:none;
+}
+
+.corner.br{
+    bottom:18px;
+    right:18px;
+    border-left:none;
+    border-top:none;
+}
+
+/* ================= WATERMARK LOGO ================= */
+
+.watermark-logo{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:700px;
+    opacity:0.035;
+    z-index:0;
+    pointer-events:none;
+}
+
+.watermark-logo img{
+    width:100%;
+    height:auto;
+}
+
+/* ================= CONTENT ================= */
+
+.cert-content{
+    position:absolute;
+    inset:0;
+    padding:75px 90px;
+    text-align:center;
+    z-index:2;
+}
+
+.cert-content > *{
+    position:relative;
+    z-index:2;
+}
+
+/* ================= TOP LOGO ================= */
+
+.top-logo{
+    width:95px;
+    height:auto;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+/* ================= TITLES ================= */
+
+.title{
+    font-family:'Cinzel',serif;
+    font-size:64px;
+    font-weight:700;
+    letter-spacing:5px;
+    color:#102542;
+}
+
+.subtitle{
+    margin-top:10px;
+    font-size:22px;
+    letter-spacing:5px;
+    color:#555;
+}
+
+.presented{
+    margin-top:55px;
+    font-size:24px;
+    color:#444;
+}
+
+.student-name{
+    margin-top:22px;
+    font-family:'Pinyon Script',cursive;
+    font-size:82px;
+    color:#7b2d26;
+    line-height:1.1;
+}
+
+.main-text{
+    margin-top:35px;
+    padding:0 60px;
+    font-size:24px;
+    line-height:1.9;
+    color:#222;
+}
+
+.grade{
+    margin-top:35px;
+    font-size:30px;
+    font-weight:700;
+    color:#14213d;
+}
+
+/* ================= SIGNATURES ================= */
+
+.signatures{
+    position:absolute;
+    left:100px;
+    right:100px;
+    bottom:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.sign-box{
+    width:320px;
+    text-align:center;
+}
+
+.sign-line{
+    border-top:2px solid #333;
+    margin-bottom:10px;
+}
+
+.sign-title{
+    font-size:20px;
+    font-weight:600;
+}
+
+.sign-name{
+    margin-top:5px;
+    font-size:18px;
+    color:#444;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    position:absolute;
+    width:100%;
+    bottom:28px;
+    text-align:center;
+    font-size:18px;
+    color:#444;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    body{
+        background:white;
+        padding:0;
+    }
+
+    .top-panel{
+        display:none;
+    }
+
+    #certificate{
+        margin:0;
+        box-shadow:none;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= FORM ================= -->
+
+    <div class="top-panel">
+
+        <h2>Professional Certificate Generator 2026</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Student Name</label>
+                <input type="text" id="studentName" value="Pathan Arshad Khan">
+            </div>
+
+            <div class="form-group">
+                <label>Father Name</label>
+                <input type="text" id="fatherName" value="Pathan Yakub Khan">
+            </div>
+
+            <div class="form-group">
+                <label>Program / Camp Name</label>
+                <input type="text" id="courseName" value="Summer Deeniyat Camp 2026">
+            </div>
+
+            <div class="form-group">
+                <label>Start Date</label>
+                <input type="text" id="startDate" value="1 May 2026">
+            </div>
+
+            <div class="form-group">
+                <label>End Date</label>
+                <input type="text" id="endDate" value="25 May 2026">
+            </div>
+
+            <div class="form-group">
+                <label>Institute Name</label>
+                <input type="text" id="instituteName" value="Maktab Fatimah Lil Banat">
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" id="location" value="Khammam, Telangana">
+            </div>
+
+            <div class="form-group">
+                <label>Grade</label>
+                <input type="text" id="grade" value="A Grade">
+            </div>
+
+            <div class="form-group">
+                <label>Principal Name</label>
+                <input type="text" id="principalName" value="Principal">
+            </div>
+
+            <div class="form-group">
+                <label>Organization Name</label>
+                <input type="text" id="orgName" value="Madarsa Idara Taleemul Islam Trust, Khammam">
+            </div>
+
+            <div class="form-group">
+                <label>Certificate ID</label>
+                <input type="text" id="certificateId" value="CERT-2026-001">
+            </div>
+
+        </div>
+
+        <div class="btns">
+
+            <button class="preview-btn" onclick="generateCertificate()">
+                Generate Preview
+            </button>
+
+            <button class="download-btn" onclick="downloadPDF()">
+                Download PDF
+            </button>
+
+            <button class="print-btn" onclick="window.print()">
+                Print Certificate
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CERTIFICATE ================= -->
+
+    <div id="certificate">
+
+        <!-- borders -->
+
+        <div class="inner-border"></div>
+
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+        <!-- watermark -->
+
+        <div class="watermark-logo">
+            <img src="logo.png">
+        </div>
+
+        <!-- content -->
+
+        <div class="cert-content">
+
+            <!-- small top logo -->
+
+            <img
+            src="logo.png"
+            class="top-logo"
+            id="logoPreview">
+
+            <div class="title">
+                CERTIFICATE
+            </div>
+
+            <div class="subtitle">
+                OF ACHIEVEMENT
+            </div>
+
+            <div class="presented">
+                This certificate is proudly presented to
+            </div>
+
+            <div class="student-name" id="previewName">
+                Pathan Arshad Khan
+            </div>
+
+            <div class="main-text" id="previewText">
+
+                S/o Pathan Yakub Khan, for participating in the Summer Deeniyat Camp 2026 and successfully completing the program from 1 May 2026 to 25 May 2026 at Maktab Fatimah Lil Banat, Khammam, Telangana.
+
+            </div>
+
+            <div class="grade" id="previewGrade">
+                Awarded: A Grade
+            </div>
+
+        </div>
+
+        <!-- signatures -->
+
+        <div class="signatures">
+
+            <div class="sign-box">
+
+                <div class="sign-line"></div>
+
+                <div class="sign-title">
+                    Principal
+                </div>
+
+                <div class="sign-name" id="previewPrincipal">
+                    Principal
+                </div>
+
+            </div>
+
+            <div class="sign-box">
+
+                <div class="sign-line"></div>
+
+                <div class="sign-title">
+                    Authorized By
+                </div>
+
+                <div class="sign-name" id="previewOrg">
+                    Madarsa Idara Taleemul Islam Trust, Khammam
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- footer -->
+
+        <div class="footer">
+
+            Certificate ID:
+            <span id="previewCertificateId">
+                CERT-2026-001
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* ================= GENERATE ================= */
+
+function generateCertificate(){
+
+    const studentName =
+    document.getElementById('studentName').value;
+
+    const fatherName =
+    document.getElementById('fatherName').value;
+
+    const courseName =
+    document.getElementById('courseName').value;
+
+    const startDate =
+    document.getElementById('startDate').value;
+
+    const endDate =
+    document.getElementById('endDate').value;
+
+    const instituteName =
+    document.getElementById('instituteName').value;
+
+    const location =
+    document.getElementById('location').value;
+
+    const grade =
+    document.getElementById('grade').value;
+
+    const principalName =
+    document.getElementById('principalName').value;
+
+    const orgName =
+    document.getElementById('orgName').value;
+
+    const certificateId =
+    document.getElementById('certificateId').value;
+
+    /* preview updates */
+
+    document.getElementById('previewName').innerText =
+    studentName;
+
+    document.getElementById('previewText').innerText =
+    `S/o ${fatherName}, for participating in the ${courseName} and successfully completing the program from ${startDate} to ${endDate} at ${instituteName}, ${location}.`;
+
+    document.getElementById('previewGrade').innerText =
+    `Awarded: ${grade}`;
+
+    document.getElementById('previewPrincipal').innerText =
+    principalName;
+
+    document.getElementById('previewOrg').innerText =
+    orgName;
+
+    document.getElementById('previewCertificateId').innerText =
+    certificateId;
+
+}
+
+/* ================= DOWNLOAD PDF ================= */
+
+function downloadPDF(){
+
+    const element =
+    document.getElementById('certificate');
+
+    const options = {
+
+        margin:0,
+
+        filename:'certificate.pdf',
+
+        image:{
+            type:'jpeg',
+            quality:1
+        },
+
+        html2canvas:{
+            scale:4,
+            useCORS:true
+        },
+
+        jsPDF:{
+            unit:'px',
+            format:[1400,990],
+            orientation:'landscape'
+        }
+
+    };
+
+    html2pdf()
+    .set(options)
+    .from(element)
+    .save();
+
+}
+
+/* initial generation */
+
+generateCertificate();
+
+</script>
+
+</body>
+</html>
