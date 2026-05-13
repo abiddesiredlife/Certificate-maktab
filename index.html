@@ -7,13 +7,13 @@
 
 <title>Maktab Fatimah Certificate Generator 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=Montserrat:wght@400;500;600;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
 
-/* ========================= GLOBAL ========================= */
+/* ================= GLOBAL ================= */
 
 *{
     margin:0;
@@ -33,103 +33,162 @@ body{
     margin:auto;
 }
 
-/* ========================= FORM PANEL ========================= */
+/* ================= FORM PANEL ================= */
 
 .top-panel{
+
     background:#fff;
+
     padding:30px;
+
     border-radius:18px;
-    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.08);
+
     margin-bottom:35px;
+
 }
 
 .top-panel h2{
+
     font-size:30px;
+
     margin-bottom:25px;
+
     color:#102542;
+
 }
 
 .form-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
     gap:18px;
+
 }
 
 .form-group{
+
     display:flex;
+
     flex-direction:column;
+
 }
 
 .form-group label{
+
     margin-bottom:8px;
+
     font-weight:600;
+
     color:#1b3556;
+
 }
 
 .form-group input{
+
     padding:13px;
+
     border:1px solid #d0d7e2;
+
     border-radius:10px;
+
     font-size:15px;
+
     outline:none;
+
 }
 
-/* ========================= BUTTONS ========================= */
+/* ================= BUTTONS ================= */
 
 .btns{
+
     margin-top:30px;
+
     display:flex;
+
     gap:15px;
+
     flex-wrap:wrap;
+
 }
 
 button{
+
     border:none;
+
     padding:14px 24px;
+
     border-radius:12px;
+
     font-size:15px;
+
     font-weight:700;
+
     cursor:pointer;
+
     transition:0.3s;
+
 }
 
 .preview-btn{
+
     background:#102542;
+
     color:white;
+
 }
 
 .download-btn{
+
     background:#0a9396;
+
     color:white;
+
 }
 
 .save-btn{
+
     background:#c69214;
+
     color:white;
+
 }
 
 button:hover{
+
     transform:translateY(-2px);
+
 }
 
-/* ========================= CERTIFICATE ========================= */
+/* ================= CERTIFICATE ================= */
 
 #certificate{
 
     width:1400px;
+
     height:990px;
+
     background:white;
+
     position:relative;
+
     margin:auto;
+
     overflow:hidden;
 
     border:18px solid #102542;
 
-    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.15);
 
 }
 
-/* ========================= INNER BORDER ========================= */
+/* ================= INNER BORDER ================= */
 
 .inner-border{
 
@@ -144,7 +203,7 @@ button:hover{
 
 }
 
-/* ========================= CORNERS ========================= */
+/* ================= CORNERS ================= */
 
 .corner{
 
@@ -185,7 +244,7 @@ button:hover{
     border-top:none;
 }
 
-/* ========================= WATERMARK ========================= */
+/* ================= WATERMARK ================= */
 
 .watermark-logo{
 
@@ -198,7 +257,7 @@ button:hover{
 
     width:720px;
 
-    opacity:0.035;
+    opacity:0.022;
 
     pointer-events:none;
 
@@ -208,7 +267,7 @@ button:hover{
     width:100%;
 }
 
-/* ========================= CERT CONTENT ========================= */
+/* ================= CONTENT ================= */
 
 .cert-content{
 
@@ -224,98 +283,79 @@ button:hover{
 
 }
 
-/* ========================= HEADER BRAND ========================= */
+/* ================= HEADER ================= */
 
 .header-brand{
 
     display:flex;
 
-    align-items:center;
+    align-items:flex-start;
 
     justify-content:center;
 
-    gap:35px;
+    gap:28px;
 
-    margin-bottom:28px;
+    margin-bottom:45px;
 
 }
 
-/* ========================= LOGO ========================= */
+/* ================= LOGO ================= */
 
 .logo{
 
-    width:105px;
-
-    height:auto;
-
-}
-
-/* ========================= BRANDING ========================= */
-
-.branding{
-    text-align:left;
-}
-
-/* ========================= ARABIC NAME ========================= */
-
-.arabic-name{
-
-    font-family:'Amiri', serif;
-
-    font-size:58px;
-
-    font-weight:900;
-
-    line-height:1.2;
-
-    letter-spacing:1px;
-
-    color:#b8860b;
-
-    text-shadow:
-        0px 1px 0px #f7e7a1,
-        0px 2px 0px #d4af37,
-        0px 3px 8px rgba(0,0,0,0.18);
-
-    direction:rtl;
-
-    unicode-bidi:embed;
-
-}
-
-/* ========================= ENGLISH NAME ========================= */
-
-.english-name{
-
-    font-size:24px;
-
-    font-weight:800;
-
-    color:#102542;
-
-    letter-spacing:2px;
+    width:120px;
 
     margin-top:8px;
 
 }
 
-/* ========================= LOCATION ========================= */
+/* ================= BRANDING ================= */
 
-.location{
+.branding{
 
-    margin-top:6px;
+    display:flex;
 
-    font-size:15px;
+    flex-direction:column;
 
-    color:#666;
+    align-items:flex-start;
 
 }
 
-/* ========================= TITLES ========================= */
+/* ================= TITLE ART ================= */
+
+.title-art{
+
+    width:720px;
+
+    max-width:100%;
+
+    height:auto;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+/* ================= LOCATION ================= */
+
+.location{
+
+    margin-top:12px;
+
+    font-size:16px;
+
+    color:#666;
+
+    padding-left:10px;
+
+}
+
+/* ================= TITLES ================= */
 
 .title{
 
-    margin-top:10px;
+    margin-top:0px;
 
     font-family:'Cinzel',serif;
 
@@ -351,7 +391,7 @@ button:hover{
 
 }
 
-/* ========================= STUDENT NAME ========================= */
+/* ================= STUDENT NAME ================= */
 
 .student-name{
 
@@ -367,7 +407,7 @@ button:hover{
 
 }
 
-/* ========================= MAIN TEXT ========================= */
+/* ================= MAIN TEXT ================= */
 
 .main-text{
 
@@ -383,7 +423,7 @@ button:hover{
 
 }
 
-/* ========================= GRADE ========================= */
+/* ================= GRADE ================= */
 
 .grade{
 
@@ -397,7 +437,7 @@ button:hover{
 
 }
 
-/* ========================= SIGNATURES ========================= */
+/* ================= SIGNATURES ================= */
 
 .signatures{
 
@@ -448,7 +488,7 @@ button:hover{
 
 }
 
-/* ========================= FOOTER ========================= */
+/* ================= FOOTER ================= */
 
 .footer{
 
@@ -466,7 +506,7 @@ button:hover{
 
 }
 
-/* ========================= HISTORY SECTION ========================= */
+/* ================= HISTORY ================= */
 
 .history-section{
 
@@ -478,7 +518,8 @@ button:hover{
 
     border-radius:18px;
 
-    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.08);
 
 }
 
@@ -526,7 +567,7 @@ table tr:hover{
 
 }
 
-/* ========================= PRINT ========================= */
+/* ================= PRINT ================= */
 
 @media print{
 
@@ -555,7 +596,7 @@ table tr:hover{
 
 <div class="container">
 
-<!-- ========================= FORM PANEL ========================= -->
+<!-- ================= FORM ================= -->
 
 <div class="top-panel">
 
@@ -565,7 +606,7 @@ table tr:hover{
 
 <div class="form-group">
 <label>Student Name</label>
-<input type="text" id="studentName" value="Bareerah Fathimah">
+<input type="text" id="studentName" value="">
 </div>
 
 <div class="form-group">
@@ -575,7 +616,7 @@ table tr:hover{
 
 <div class="form-group">
 <label>Parent Name</label>
-<input type="text" id="parentName" value="Mohammad Abid">
+<input type="text" id="parentName" value="">
 </div>
 
 <div class="form-group">
@@ -623,7 +664,7 @@ Save Certificate
 
 </div>
 
-<!-- ========================= CERTIFICATE ========================= -->
+<!-- ================= CERTIFICATE ================= -->
 
 <div id="certificate">
 
@@ -640,7 +681,7 @@ Save Certificate
 <img src="logo.png">
 </div>
 
-<!-- certificate content -->
+<!-- content -->
 
 <div class="cert-content">
 
@@ -652,13 +693,9 @@ Save Certificate
 
 <div class="branding">
 
-<div class="arabic-name">
-مَكْتَبُ فَاطِمَةَ لِلْبَنَات
-</div>
-
-<div class="english-name">
-MAKTAB FATIMAH LIL BANAT
-</div>
+<img
+src="title.png"
+class="title-art">
 
 <div class="location">
 Khammam, Telangana
@@ -682,17 +719,17 @@ OF ACHIEVEMENT
 This certificate is proudly presented to
 </div>
 
-<!-- student name -->
+<!-- student -->
 
 <div class="student-name" id="previewName">
-Bareerah Fathimah
+Student Name
 </div>
 
 <!-- body -->
 
 <div class="main-text" id="previewText">
 
-D/O Mohammad Abid, for participating in the Summer Deeniyat Camp 2026 and successfully completing the 25-day program conducted from 25 April 2026 to 23 May 2026 at Maktab Fatimah Lil Banat, Khammam, Telangana.
+D/O Parent Name, for participating in the Summer Deeniyat Camp 2026 and successfully completing the 30-day program conducted from 25 April 2026 to 24 May 2026 at Maktab Fatimah Lil Banat, Khammam, Telangana.
 
 </div>
 
@@ -751,7 +788,7 @@ CERT-2026-1001
 
 </div>
 
-<!-- ========================= HISTORY ========================= -->
+<!-- ================= HISTORY ================= -->
 
 <div class="history-section">
 
@@ -785,7 +822,7 @@ CERT-2026-1001
 
 <script>
 
-/* ========================= AUTO CERTIFICATE NUMBER ========================= */
+/* ================= AUTO CERTIFICATE NUMBER ================= */
 
 let currentCertificateNumber =
 generateCertificateNumber();
@@ -816,7 +853,7 @@ function generateCertificateNumber(){
 
 }
 
-/* ========================= GENERATE CERTIFICATE ========================= */
+/* ================= GENERATE CERTIFICATE ================= */
 
 function generateCertificate(){
 
@@ -845,11 +882,11 @@ function generateCertificate(){
     document.getElementById("principalName").value;
 
     document.getElementById("previewName").innerText =
-    studentName;
+    studentName || "Student Name";
 
     document.getElementById("previewText").innerText =
 
-    `${relationType} ${parentName}, for participating in the ${programName} and successfully completing the 25-day program conducted from ${startDate} to ${endDate} at Maktab Fatimah Lil Banat, Khammam, Telangana.`;
+    `${relationType} ${parentName}, for participating in the ${programName} and successfully completing the 30-day program conducted from ${startDate} to ${endDate} at Maktab Fatimah Lil Banat, Khammam, Telangana.`;
 
     document.getElementById("previewGrade").innerText =
     `Awarded: ${grade}`;
@@ -862,7 +899,7 @@ function generateCertificate(){
 
 }
 
-/* ========================= DOWNLOAD PDF ========================= */
+/* ================= DOWNLOAD PDF ================= */
 
 function downloadPDF(){
 
@@ -896,7 +933,7 @@ function downloadPDF(){
 
 }
 
-/* ========================= SAVE HISTORY ========================= */
+/* ================= SAVE HISTORY ================= */
 
 function saveCertificate(){
 
@@ -937,7 +974,7 @@ function saveCertificate(){
 
 }
 
-/* ========================= INITIAL ========================= */
+/* ================= INITIAL ================= */
 
 generateCertificate();
 
