@@ -99,26 +99,31 @@ position:absolute;
 top:0;
 left:0;
 right:0;
-height:76px;
+height:68px;
 background:linear-gradient(180deg,
-rgba(10,31,61,.72) 0%,
-rgba(10,31,61,.48) 52%,
+rgba(10,31,61,.52) 0%,
+rgba(10,31,61,.24) 48%,
 rgba(10,31,61,0) 100%);
 }
 
 .watermark{
 position:absolute;
-top:50%;
+top:58%;
 left:50%;
-transform:translate(-50%,-50%) rotate(-8deg);
+transform:translate(-50%,-50%) rotate(-10deg);
 width:430px;
 height:430px;
 object-fit:contain;
-opacity:.10;
+opacity:.13;
+z-index:1;
+pointer-events:none;
 filter:
-brightness(1.04)
-contrast(1.03)
-grayScale(4%);
+grayscale(100%)
+sepia(28%)
+brightness(.72)
+contrast(1.15)
+blur(.15px);
+mix-blend-mode:multiply;
 }
 
 .outer-border{
@@ -246,13 +251,13 @@ color:#3b2a1e;
 .info-row{
 display:flex;
 justify-content:center;
-margin-top:18px;
+margin-top:22px;
 border:1px solid rgba(212,175,55,.25);
 background:rgba(212,175,55,.05);
 }
 
 .info-box{
-padding:12px 28px;
+padding:14px 32px;
 text-align:center;
 }
 
@@ -307,12 +312,13 @@ margin-bottom:2px;
 font-family:'Playfair Display',serif;
 font-size:16px;
 color:#3d342c;
-margin-bottom:4px;
+margin-top:10px;
+margin-bottom:8px;
 }
 
 .sig-school{
 font-family:'Great Vibes',cursive;
-font-size:32px;
+font-size:28px;
 color:#8a5a56;
 line-height:1.1;
 }
@@ -325,7 +331,7 @@ padding-bottom:18px;
 
 .sig-arabic{
 font-family:'Amiri',serif;
-font-size:30px;
+font-size:24px;
 color:#1f9f77;
 line-height:1;
 margin-bottom:4px;
@@ -336,7 +342,7 @@ font-size:15px;
 }
 
 .right-school{
-font-size:30px;
+font-size:26px;
 }
 
 .sig-trust{
@@ -487,12 +493,10 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
 <div class="sig-top-line"></div>
 <div class="sig-icon">✍</div>
 <div class="sig-role">Principal</div>
-<div class="sig-school">Makhab-E-Fathima lil banat</div>
+<div class="sig-school">Maktab Fatimah Lil Banat</div>
 </div>
 
-<div class="footer-center-ornament">
-❦
-</div>
+
 
 <div class="signature-block">
 <div class="sig-arabic">والله</div>
