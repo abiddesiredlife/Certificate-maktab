@@ -287,70 +287,68 @@ margin-top:auto;
 display:flex;
 justify-content:space-between;
 align-items:flex-end;
-padding:0 40px 34px;
+padding:0 55px 30px;
+gap:60px;
 }
 
 .signature-block{
 width:320px;
 text-align:center;
+position:relative;
 }
 
-.sig-top-line{
-width:120px;
-height:1px;
-background:rgba(10,31,61,.35);
+.signature-img{
+display:block;
 margin:0 auto 6px;
+object-fit:contain;
+opacity:.92;
+filter:
+drop-shadow(0 1px 1px rgba(0,0,0,.04));
 }
 
-.sig-icon{
-font-size:26px;
-color:rgba(10,31,61,.55);
-margin-bottom:2px;
+.principal-sign{
+width:150px;
+height:auto;
+margin-bottom:-2px;
+}
+
+.auth-sign{
+width:170px;
+height:auto;
+margin-bottom:-6px;
+}
+
+.sig-line{
+width:150px;
+height:1px;
+background:rgba(10,31,61,.22);
+margin:0 auto 10px;
 }
 
 .sig-role{
 font-family:'Playfair Display',serif;
-font-size:16px;
-color:#3d342c;
-margin-top:10px;
-margin-bottom:8px;
+font-size:15px;
+color:#43352c;
+margin-bottom:5px;
 }
 
 .sig-school{
 font-family:'Great Vibes',cursive;
-font-size:28px;
+font-size:30px;
+line-height:1.05;
 color:#8a5a56;
-line-height:1.1;
-}
-
-.footer-center-ornament{
-font-size:38px;
-color:rgba(120,102,70,.5);
-padding-bottom:18px;
-}
-
-.sig-arabic{
-font-family:'Amiri',serif;
-font-size:24px;
-color:#1f9f77;
-line-height:1;
-margin-bottom:4px;
-}
-
-.right{
-font-size:15px;
 }
 
 .right-school{
-font-size:26px;
+font-size:27px;
 }
 
 .sig-trust{
 font-family:'Playfair Display',serif;
-font-size:18px;
+font-size:17px;
 font-style:italic;
 color:#6c5647;
-margin-top:2px;
+margin-top:3px;
 }
 
 .signature{
@@ -489,11 +487,45 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
 
 <div class="footer">
 
-<div class="signature-block">
-<div class="sig-role">Principal</div>
-<div class="sig-school">Maktab Fatimah Lil Banat</div>
-</div>
+  <!-- Principal -->
+  <div class="signature-block">
 
+    <img src="principal.png" class="signature-img principal-sign">
+
+    <div class="sig-line"></div>
+
+    <div class="sig-role">
+      Principal
+    </div>
+
+    <div class="sig-school">
+      Maktab Fatimah Lil Banat
+    </div>
+
+  </div>
+
+  <!-- Guidance -->
+  <div class="signature-block right-signature">
+
+    <img src="authorization.png" class="signature-img auth-sign">
+
+    <div class="sig-line"></div>
+
+    <div class="sig-role">
+      Under the Guidance Of
+    </div>
+
+    <div class="sig-school right-school">
+      Madrasa Idara Taleemul Islam
+    </div>
+
+    <div class="sig-trust">
+      Trust Khammam
+    </div>
+
+  </div>
+
+</div>
 
 
 <div class="signature-block">
