@@ -117,12 +117,7 @@ object-fit:contain;
 opacity:.13;
 z-index:1;
 pointer-events:none;
-filter:
-grayscale(100%)
-sepia(28%)
-brightness(.72)
-contrast(1.15)
-blur(.15px);
+filter: grayscale(100%) sepia(28%) brightness(.72) contrast(1.15) blur(.15px);
 mix-blend-mode:multiply;
 }
 
@@ -147,7 +142,6 @@ flex-direction:column;
 z-index:2;
 }
 
-/* ==================== HEADER STYLES ==================== */
 .header{
 display:flex;
 align-items:center;
@@ -283,77 +277,68 @@ color:var(--navy);
 font-style:italic;
 }
 
-/* ==================== FIXED FOOTER ==================== */
+/* ==================== FIXED & ALIGNED FOOTER ==================== */
 .footer{
-  margin-top: auto;
+  position: absolute;
+  bottom: 45px; /* Ensures fixed distance from bottom edge */
+  left: 65px;
+  right: 65px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 65px 45px;
-  gap: 90px;
+  align-items: flex-end; /* Aligns both signatures to the same baseline */
 }
 
 .signature-block{
-  width: 310px;
+  width: 320px; /* Uniform width for symmetry */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  min-height: 170px;
 }
 
 .signature-img{
   display:block;
   object-fit:contain;
   opacity:.92;
-  filter:drop-shadow(0 1px 1px rgba(0,0,0,.03));
+  height: 60px; /* Constant height prevents layout shift */
+  margin-bottom: 5px;
 }
 
-.principal-sign{
-  width: 138px;
-  margin-bottom: 4px;
-}
-
-.auth-sign{
-  width: 145px;
-  margin-bottom: 6px;
-}
+.principal-sign{ width: 135px; }
+.auth-sign{ width: 145px; }
 
 .sig-line{
-  width: 165px;
+  width: 200px; /* Identical width for both signature lines */
   height: 1px;
   background: rgba(10,31,61,.32);
-  margin: 8px auto 9px;
+  margin: 5px auto 8px;
 }
 
 .sig-role{
-  font-family:'Playfair Display',serif;
-  font-size: 15px;
+  font-family:'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
   color: #43352c;
-  margin-bottom: 6px;
-  line-height: 1.2;
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
 }
 
 .sig-school{
   font-family:'Great Vibes',cursive;
-  font-size: 25.5px;
-  line-height: 1.12;
+  font-size: 25px;
+  line-height: 1.1;
   color: #8a5a56;
-  max-width: 280px;
 }
 
-.right-school{
-  font-size: 23.5px;
-}
+.right-school{ font-size: 23px; }
 
 .sig-trust{
   font-family:'Playfair Display',serif;
-  font-size: 15px;
+  font-size: 14px;
   font-style: italic;
   color: #6c5647;
-  margin-top: 3px;
+  margin-top: 2px;
 }
-/* ==================================================== */
 
 .corner{
 position:absolute;
@@ -396,9 +381,6 @@ MAKTAB FATIMAH LIL BANAT
 
 <label>Grade / Award</label>
 <input class="input" id="grade" value="A">
-
-<label>Principal</label>
-<input class="input" id="principalName" value="Rizwana">
 
 <button class="btn" onclick="downloadPDF()">DOWNLOAD ULTRA HD PDF</button>
 </div>
@@ -458,9 +440,7 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
 </div>
 </div>
 
-<!-- FIXED FOOTER -->
 <div class="footer">
-  <!-- Left - Principal -->
   <div class="signature-block">
     <img src="principal.png" class="signature-img principal-sign">
     <div class="sig-line"></div>
@@ -468,7 +448,6 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
     <div class="sig-school">Maktab Fatimah Lil Banat</div>
   </div>
 
-  <!-- Right - Guidance -->
   <div class="signature-block">
     <img src="authorization.png" class="signature-img auth-sign">
     <div class="sig-line"></div>
@@ -482,7 +461,6 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
 </div>
 </div>
 
-</div>
 </div>
 
 <script>
