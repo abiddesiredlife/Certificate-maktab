@@ -147,6 +147,7 @@ flex-direction:column;
 z-index:2;
 }
 
+/* ==================== HEADER STYLES ==================== */
 .header{
 display:flex;
 align-items:center;
@@ -284,27 +285,21 @@ font-style:italic;
 
 /* ==================== FIXED FOOTER ==================== */
 .footer{
-  margin-top:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  padding:0 70px 42px;
-  gap:80px;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 65px 45px;
+  gap: 90px;
 }
 
 .signature-block{
-  width:320px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-end;
-  min-height:165px;
-  text-align:center;
-  position:relative;
-}
-
-.right-signature{
-  padding-top:8px;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 170px;
 }
 
 .signature-img{
@@ -315,50 +310,48 @@ font-style:italic;
 }
 
 .principal-sign{
-  width:140px;
-  margin-bottom:2px;
+  width: 138px;
+  margin-bottom: 4px;
 }
 
 .auth-sign{
-  width:145px;
-  margin-bottom:6px;
+  width: 145px;
+  margin-bottom: 6px;
 }
 
 .sig-line{
-  width:160px;
-  height:1px;
-  background:rgba(10,31,61,.28);
-  margin:8px auto 10px;
+  width: 165px;
+  height: 1px;
+  background: rgba(10,31,61,.32);
+  margin: 8px auto 9px;
 }
 
 .sig-role{
   font-family:'Playfair Display',serif;
-  font-size:15px;
-  color:#43352c;
-  line-height:1.2;
-  margin-bottom:6px;
+  font-size: 15px;
+  color: #43352c;
+  margin-bottom: 6px;
+  line-height: 1.2;
 }
 
 .sig-school{
   font-family:'Great Vibes',cursive;
-  font-size:26px;
-  line-height:1.15;
-  color:#8a5a56;
-  max-width:290px;
+  font-size: 25.5px;
+  line-height: 1.12;
+  color: #8a5a56;
+  max-width: 280px;
 }
 
 .right-school{
-  font-size:24px;
-  line-height:1.18;
+  font-size: 23.5px;
 }
 
 .sig-trust{
   font-family:'Playfair Display',serif;
-  font-size:15.5px;
-  font-style:italic;
-  color:#6c5647;
-  margin-top:2px;
-  line-height:1.1;
+  font-size: 15px;
+  font-style: italic;
+  color: #6c5647;
+  margin-top: 3px;
 }
 /* ==================================================== */
 
@@ -378,7 +371,6 @@ border-color:rgba(212,175,55,.7);
 <body>
 
 <div class="wrapper">
-
 <div class="sidebar">
 <h2 style="font-family:'Cinzel',serif;color:#d4af37;margin-bottom:28px;line-height:1.6;letter-spacing:.12em;font-size:15px;">
 MAKTAB FATIMAH LIL BANAT
@@ -412,7 +404,6 @@ MAKTAB FATIMAH LIL BANAT
 </div>
 
 <div class="preview">
-
 <div id="certificate">
 
 <div class="texture"></div>
@@ -431,7 +422,6 @@ MAKTAB FATIMAH LIL BANAT
 
 <div class="header">
 <img src="logo.png" class="logo">
-
 <div class="header-text">
 <div class="arabic">مَكْتَب فَاطِمَة لِلْبَنَات</div>
 <div class="english">MAKTAB FATIMAH LIL BANAT</div>
@@ -439,8 +429,7 @@ MAKTAB FATIMAH LIL BANAT
 </div>
 </div>
 
-<div class="title">CERTIFICATE </div>
-
+<div class="title">CERTIFICATE</div>
 <div class="intro">This is to proudly certify that</div>
 
 <div class="student-name" id="previewName">Bareerah Fathimah</div>
@@ -459,21 +448,19 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
 <div class="info-label">Programme</div>
 <div class="info-value" id="previewProgram">Deeniyat Summer Camp</div>
 </div>
-
 <div class="info-box">
 <div class="info-label">Duration</div>
 <div class="info-value" id="previewDuration">25 April 2026 – 24 May 2026</div>
 </div>
-
 <div class="info-box">
 <div class="info-label">Grade & Award</div>
 <div class="info-value" id="previewGrade">A</div>
 </div>
 </div>
 
+<!-- FIXED FOOTER -->
 <div class="footer">
-
-  <!-- Principal -->
+  <!-- Left - Principal -->
   <div class="signature-block">
     <img src="principal.png" class="signature-img principal-sign">
     <div class="sig-line"></div>
@@ -481,15 +468,14 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
     <div class="sig-school">Maktab Fatimah Lil Banat</div>
   </div>
 
-  <!-- Guidance -->
-  <div class="signature-block right-signature">
+  <!-- Right - Guidance -->
+  <div class="signature-block">
     <img src="authorization.png" class="signature-img auth-sign">
     <div class="sig-line"></div>
     <div class="sig-role">Under the Guidance Of</div>
     <div class="sig-school right-school">Madrasa Idara Taleemul Islam</div>
     <div class="sig-trust">Trust Khammam</div>
   </div>
-
 </div>
 
 </div>
@@ -500,52 +486,45 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
 </div>
 
 <script>
-const ids=[
-'studentName','relation','parentName','programName',
-'startDate','endDate','grade','principalName'
-];
+const ids = ['studentName','relation','parentName','programName','startDate','endDate','grade'];
 
-ids.forEach(id=>{
-document.getElementById(id).addEventListener('input',updatePreview);
+ids.forEach(id => {
+  document.getElementById(id).addEventListener('input', updatePreview);
 });
 
 function updatePreview(){
-const name=document.getElementById('studentName').value;
-const relation=document.getElementById('relation').value;
-const parent=document.getElementById('parentName').value;
-const program=document.getElementById('programName').value;
-const start=document.getElementById('startDate').value;
-const end=document.getElementById('endDate').value;
-const grade=document.getElementById('grade').value;
+  const name = document.getElementById('studentName').value;
+  const relation = document.getElementById('relation').value;
+  const parent = document.getElementById('parentName').value;
+  const program = document.getElementById('programName').value;
+  const start = document.getElementById('startDate').value;
+  const end = document.getElementById('endDate').value;
+  const grade = document.getElementById('grade').value;
 
-const relMap={
-'D/O':'daughter of',
-'S/O':'son of',
-'W/O':'wife of'
-};
+  const relMap = {'D/O':'daughter of','S/O':'son of','W/O':'wife of'};
 
-document.getElementById('previewName').innerText=name;
-document.getElementById('previewRelation').innerHTML=`${relMap[relation]||relation} ${parent}`;
-document.getElementById('previewProgram').innerText=program;
-document.getElementById('previewDuration').innerText=`${start} – ${end}`;
-document.getElementById('previewGrade').innerText=grade;
+  document.getElementById('previewName').innerText = name;
+  document.getElementById('previewRelation').innerHTML = `${relMap[relation]||relation} ${parent}`;
+  document.getElementById('previewProgram').innerText = program;
+  document.getElementById('previewDuration').innerText = `${start} – ${end}`;
+  document.getElementById('previewGrade').innerText = grade;
 
-document.getElementById('previewBody').innerHTML=`
-Has successfully and commendably completed the <strong>${program}</strong>
-programme at <strong>Maktab Fatimah Lil Banat</strong>, Khammam, fulfilling all academic
-and spiritual requirements with remarkable excellence and dedication to sacred Islamic learning.
-`;
+  document.getElementById('previewBody').innerHTML = `
+    Has successfully and commendably completed the <strong>${program}</strong>
+    programme at <strong>Maktab Fatimah Lil Banat</strong>, Khammam, fulfilling all academic
+    and spiritual requirements with remarkable excellence and dedication to sacred Islamic learning.
+  `;
 }
 
 function downloadPDF(){
-const element=document.getElementById('certificate');
-html2pdf().set({
-margin:0,
-filename:'certificate.pdf',
-image:{type:'jpeg',quality:1},
-html2canvas:{scale:4.8,useCORS:true},
-jsPDF:{unit:'px',format:[1000,707],orientation:'landscape'}
-}).from(element).save();
+  const element = document.getElementById('certificate');
+  html2pdf().set({
+    margin:0,
+    filename:'certificate.pdf',
+    image:{type:'jpeg',quality:1},
+    html2canvas:{scale:4.8,useCORS:true},
+    jsPDF:{unit:'px',format:[1000,707],orientation:'landscape'}
+  }).from(element).save();
 }
 </script>
 
