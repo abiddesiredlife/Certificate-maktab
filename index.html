@@ -282,108 +282,85 @@ color:var(--navy);
 font-style:italic;
 }
 
+/* ==================== FIXED FOOTER ==================== */
 .footer{
-margin-top:auto;
-display:flex;
-justify-content:space-between;
-align-items:flex-end;
-padding:0 70px 42px;
-gap:70px;
+  margin-top:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  padding:0 70px 42px;
+  gap:80px;
 }
 
 .signature-block{
-width:320px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:flex-end;
-min-height:170px;
-text-align:center;
-position:relative;
+  width:320px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  min-height:165px;
+  text-align:center;
+  position:relative;
 }
-  
+
 .right-signature{
-padding-top:10px;
+  padding-top:8px;
 }
-  
+
 .signature-img{
-display:block;
-object-fit:contain;
-opacity:.92;
-filter:
-drop-shadow(0 1px 1px rgba(0,0,0,.03));
+  display:block;
+  object-fit:contain;
+  opacity:.92;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.03));
 }
 
 .principal-sign{
-width:140px;
-margin-bottom:2px;
+  width:140px;
+  margin-bottom:2px;
 }
 
 .auth-sign{
-width:145px;
-margin-bottom:6px;
+  width:145px;
+  margin-bottom:6px;
 }
 
 .sig-line{
-width:130px;
-height:1px;
-background:rgba(10,31,61,.22);
-margin:6px auto 10px;
+  width:160px;
+  height:1px;
+  background:rgba(10,31,61,.28);
+  margin:8px auto 10px;
 }
 
 .sig-role{
-font-family:'Playfair Display',serif;
-font-size:15px;
-color:#43352c;
-line-height:1.2;
-margin-bottom:8px;
+  font-family:'Playfair Display',serif;
+  font-size:15px;
+  color:#43352c;
+  line-height:1.2;
+  margin-bottom:6px;
 }
 
 .sig-school{
-font-family:'Great Vibes',cursive;
-font-size:26px;
-line-height:1.15;
-color:#8a5a56;
-max-width:290px;
+  font-family:'Great Vibes',cursive;
+  font-size:26px;
+  line-height:1.15;
+  color:#8a5a56;
+  max-width:290px;
 }
 
 .right-school{
-font-size:24px;
-line-height:1.18;
+  font-size:24px;
+  line-height:1.18;
 }
 
 .sig-trust{
-font-family:'Playfair Display',serif;
-font-size:16px;
-font-style:italic;
-color:#6c5647;
-margin-top:2px;
-line-height:1.1;
+  font-family:'Playfair Display',serif;
+  font-size:15.5px;
+  font-style:italic;
+  color:#6c5647;
+  margin-top:2px;
+  line-height:1.1;
 }
-.signature{
-text-align:center;
-width:220px;
-}
-
-.sig-line{
-border-top:1px solid rgba(10,31,61,.5);
-margin-bottom:10px;
-}
-
-.sig-name{
-font-family:'Great Vibes',cursive;
-font-size:24px;
-color:var(--navy);
-}
-
-.sig-title{
-font-family:'Cinzel',serif;
-font-size:8px;
-letter-spacing:.14em;
-color:rgba(10,31,61,.5);
-margin-top:4px;
-text-transform:uppercase;
-}
+/* ==================================================== */
 
 .corner{
 position:absolute;
@@ -498,56 +475,27 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
 
   <!-- Principal -->
   <div class="signature-block">
-
     <img src="principal.png" class="signature-img principal-sign">
-
     <div class="sig-line"></div>
-
-    <div class="sig-role">
-      Principal
-    </div>
-
-    <div class="sig-school">
-      Maktab Fatimah Lil Banat
-    </div>
-
+    <div class="sig-role">Principal</div>
+    <div class="sig-school">Maktab Fatimah Lil Banat</div>
   </div>
 
   <!-- Guidance -->
   <div class="signature-block right-signature">
-
     <img src="authorization.png" class="signature-img auth-sign">
-
     <div class="sig-line"></div>
-
-    <div class="sig-role">
-      Under the Guidance Of
-    </div>
-
-    <div class="sig-school right-school">
-Madrasa Idara Taleemul Islam
-</div>
-
-<div class="sig-trust">
-Trust Khammam
-</div>
+    <div class="sig-role">Under the Guidance Of</div>
+    <div class="sig-school right-school">Madrasa Idara Taleemul Islam</div>
+    <div class="sig-trust">Trust Khammam</div>
   </div>
 
 </div>
 
-
-<div class="signature-block">
-<div class="sig-role right">Under the Guidance Of</div>
-<div class="sig-school right-school">Madrasa Idara Taleemul Islam Trust Khammam</div>
 </div>
-
-</div>
-
 </div>
 </div>
 
-</div>
-</div>
 </div>
 </div>
 
@@ -569,7 +517,6 @@ const program=document.getElementById('programName').value;
 const start=document.getElementById('startDate').value;
 const end=document.getElementById('endDate').value;
 const grade=document.getElementById('grade').value;
-const principal=document.getElementById('principalName').value;
 
 const relMap={
 'D/O':'daughter of',
@@ -582,7 +529,6 @@ document.getElementById('previewRelation').innerHTML=`${relMap[relation]||relati
 document.getElementById('previewProgram').innerText=program;
 document.getElementById('previewDuration').innerText=`${start} – ${end}`;
 document.getElementById('previewGrade').innerText=grade;
-document.getElementById('previewPrincipal').innerText=principal;
 
 document.getElementById('previewBody').innerHTML=`
 Has successfully and commendably completed the <strong>${program}</strong>
@@ -593,7 +539,6 @@ and spiritual requirements with remarkable excellence and dedication to sacred I
 
 function downloadPDF(){
 const element=document.getElementById('certificate');
-
 html2pdf().set({
 margin:0,
 filename:'certificate.pdf',
