@@ -195,12 +195,34 @@ font-style:italic;
 .title{
 text-align:center;
 font-family:'Cinzel',serif;
-font-size:18px;
+font-size:22px;
 font-weight:700;
-letter-spacing:.18em;
-color:var(--navy);
-margin-top:10px;
-margin-bottom:12px;
+letter-spacing:.22em;
+color:#10294f; /* darker navy for strong contrast */
+margin-top:12px;
+margin-bottom:14px;
+text-transform:uppercase;
+text-shadow:
+0 1px 0 rgba(255,255,255,.45),
+0 2px 8px rgba(10,31,61,.08);
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:18px;
+}
+
+.title::before,
+.title::after{
+content:"";
+width:90px;
+height:1.5px;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(212,175,55,.9),
+transparent
+);
 }
 
 .intro{
@@ -279,67 +301,80 @@ font-style:italic;
 
 /* ==================== FIXED & ALIGNED FOOTER ==================== */
 .footer{
-  position: absolute;
-  bottom: 45px; /* Ensures fixed distance from bottom edge */
-  left: 65px;
-  right: 65px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end; /* Aligns both signatures to the same baseline */
+position:absolute;
+bottom:42px;
+left:65px;
+right:65px;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:40px;
 }
 
 .signature-block{
-  width: 320px; /* Uniform width for symmetry */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+width:320px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-end;
+text-align:center;
 }
 
 .signature-img{
-  display:block;
-  object-fit:contain;
-  opacity:.92;
-  height: 60px; /* Constant height prevents layout shift */
-  margin-bottom: 5px;
+display:block;
+object-fit:contain;
+opacity:.92;
+height:58px;
+margin-bottom:6px;
 }
 
-.principal-sign{ width: 135px; }
-.auth-sign{ width: 145px; }
+.principal-sign{
+width:135px;
+}
+
+.auth-sign{
+width:145px;
+}
 
 .sig-line{
-  width: 200px; /* Identical width for both signature lines */
-  height: 1px;
-  background: rgba(10,31,61,.32);
-  margin: 5px auto 8px;
+width:210px;
+height:1px;
+background:rgba(10,31,61,.34);
+margin:4px auto 10px;
 }
 
 .sig-role{
-  font-family:'Cinzel', serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: #43352c;
-  margin-bottom: 4px;
-  letter-spacing: 0.05em;
+font-family:'Cinzel', serif;
+font-size:12px;
+font-weight:700;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:#3c3027;
+line-height:1.2;
+margin-bottom:5px;
+min-height:16px;
 }
 
 .sig-school{
-  font-family:'Great Vibes',cursive;
-  font-size: 25px;
-  line-height: 1.1;
-  color: #8a5a56;
+font-family:'Great Vibes',cursive;
+font-size:24px;
+line-height:1.05;
+color:#7c4f4c;
+margin-bottom:2px;
 }
 
-.right-school{ font-size: 23px; }
+.right-school{
+font-size:22px;
+}
 
 .sig-trust{
-  font-family:'Playfair Display',serif;
-  font-size: 14px;
-  font-style: italic;
-  color: #6c5647;
-  margin-top: 2px;
+font-family:'Playfair Display',serif;
+font-size:13px;
+line-height:1.2;
+font-style:italic;
+color:#6b5648;
+margin-top:1px;
 }
-
 .corner{
 position:absolute;
 width:70px;
